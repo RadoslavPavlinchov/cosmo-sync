@@ -1,9 +1,9 @@
 export default async function DynamicParams({
-    params,
+  params,
 }: {
-    params: Promise<{ dynamic: string }>
+  params: Promise<{ dynamic: string }>;
 }) {
-    const dynamicParam = (await params).dynamic
+  const dynamicParam = (await params).dynamic;
 
-    return <h1>Dynamic data from url {dynamicParam}</h1>
+  return <h1>Dynamic data from url {dynamicParam}</h1>;
 }
