@@ -101,7 +101,8 @@ export default function BlockViewer({
             <strong>Height:</strong> {blockData.header.height}
           </p>
           <p>
-            <strong>Timestamp:</strong> {blockData.header.time}
+            <strong>Timestamp:</strong>{' '}
+            {new Date(blockData?.header?.time).toString()}
           </p>
 
           <h3>Transactions</h3>

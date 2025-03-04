@@ -5,9 +5,9 @@ export const supportedChains = [
     pretty_name: 'MANTRA Dukong Testnet',
   },
   {
-    chain_id: 'mocha-4',
-    chain_name: 'celestiatestnet3',
-    pretty_name: 'Mocha Testnet',
+    chain_id: 'celestia',
+    chain_name: 'celestia',
+    pretty_name: 'Celestia',
   },
   { chain_id: 'grand-1', chain_name: 'nobletestnet', pretty_name: 'Noble' },
   {
@@ -19,7 +19,7 @@ export const supportedChains = [
 
 export const mintscanChainRoutes: { [key: string]: string } = {
   mantrachaintestnet2: 'mantra-testnet',
-  celestiatestnet3: 'celestia-testnet',
+  celestia: 'celestia',
   nobletestnet: 'noble-testnet',
   osmosistestnet: 'osmosis-testnet',
 };

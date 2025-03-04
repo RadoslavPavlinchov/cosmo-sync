@@ -1,20 +1,17 @@
 'use server';
 
 import { sha256 } from '@cosmjs/crypto';
+import { toHex } from '@cosmjs/encoding';
 import { StargateClient } from '@cosmjs/stargate';
 
 export async function getBlock(blockNumber: number, rpcEndpoint: string) {
   const client = await StargateClient.connect(rpcEndpoint);
   const block = await client.getBlock(blockNumber);
 
-  console.log('HOLY SHIT 1', block);
-
-  const txHashes = block.txs.map((txBase64) => {
-    const txBytes = Buffer.from(txBase64.toString(), 'base64');
-    return Buffer.from(sha256(txBytes)).toString('hex').toUpperCase();
+  const txHashes = block.txs.map((tx) => {
+    const hash = sha256(tx);
+    return toHex(hash).toUpperCase();
   });
-
-  console.log('HOLY SHIT 2', txHashes);
 
   return {
     id: block.id,
